@@ -17,8 +17,6 @@ describe('Gamer Profile', ()=>{
     // });
 
 
-        // const token = process.env.access_token
-
     test('Get gamer profile executed successfully', async()=>{
         const response = await axios.get('https://dev-api.yarsaplay.com/api/v1/profile',
             {
