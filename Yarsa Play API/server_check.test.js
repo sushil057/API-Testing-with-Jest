@@ -1,7 +1,7 @@
 const axios = require('axios');
 
 describe('Server Check', () => {
-    test('API is up and returns welcome message', async () => {
+    test('API Server is up and returns welcome message', async () => {
     const startTime = Date.now();
     const response = await axios.get('https://dev-api.yarsaplay.com/api');
     const endTime = Date.now();

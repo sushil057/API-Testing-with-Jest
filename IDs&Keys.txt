@@ -1,0 +1,8 @@
+Application 
+Name: One_Test
+ID: bf844582-50c1-438c-95f8-d1d0b919778e
+
+
+Server Key
+Secret Key : yplay.K7WKkj1wQmiItYEzySp9550kH0JeT1Ejhr1RdswT4ho=
+Secret Identifier: c9a60e92-f036-48d2-addb-bbe2a8c95ce1
