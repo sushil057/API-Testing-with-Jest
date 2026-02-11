@@ -1,5 +1,5 @@
 const axios = require('axios');
-require('dotenv').config();
+// require('dotenv').config();
 
 describe('Gamer Login', ()=>{
     let response;
@@ -36,9 +36,6 @@ describe('Gamer Login', ()=>{
         // process.env.access_token = response.data.accessToken.token;
         // accessToken = response.data.accessToken.token;
         // refreshToken = response.data.refreshToken.token;
-
-        // process.env.ACCESS_TOKEN = accessToken;
-        // process.env.REFRESH_TOKEN = refreshToken;
 
         expect(response.data.refreshToken).toHaveProperty('token');
         expect(response.data.refreshToken).toHaveProperty('type');
