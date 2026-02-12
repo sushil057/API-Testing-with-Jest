@@ -54,3 +54,11 @@ ID: bdcb4fba-32d3-4d62-9bf4-258292ecc366
     "defaultValue": 5
   }
 ]
+
+{
+  "id": "4ab85719-ae8c-4edc-b3dd-8bf7582ca96a",
+  "value": {
+    "total": 1,
+    "highest": 1
+  }
+}

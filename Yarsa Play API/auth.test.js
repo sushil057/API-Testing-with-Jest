@@ -1,5 +1,5 @@
 const axios = require('axios');
-// require('dotenv').config();
+require('dotenv').config();
 
 describe('Gamer Login', ()=>{
     let response;
@@ -50,7 +50,7 @@ describe('Gamer Login', ()=>{
 
     test('Access Token created successfully', async()=>{
         payload = {
-            'refreshToken': process.env.refreshToken
+            refreshToken : process.env.refresh_token2
 
         }
         const startTime = Date.now();
