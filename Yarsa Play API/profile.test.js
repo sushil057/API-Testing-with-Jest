@@ -2,7 +2,7 @@ const axios = require('axios');
 require ('dotenv').config();
 
 describe('Gamer Profile', ()=>{
-    const token = process.env.access_token
+    const token = process.env.access_token3
     // Create access token using refresh token
     // beforeAll( async()=>{
 
@@ -35,7 +35,7 @@ describe('Gamer Profile', ()=>{
 
     });
 
-    test.only('Updated Gamer Profile', async()=>{
+    test('Updated Gamer Profile', async()=>{
         payload = {
             "displayName": "Ragav Tiwari",
             "avatar": "White horse"
@@ -45,7 +45,7 @@ describe('Gamer Profile', ()=>{
                     // Player with access token 1 is Sushil Tiwari
                     // Authorization: `Bearer ${process.env.access_token1}`
                     // Player with access token 2 is RAgav Tiwari
-                    Authorization: `Bearer ${process.env.access_token2}`
+                    Authorization: `Bearer ${token}`
                 },
                 
         });
@@ -70,7 +70,7 @@ describe('Gamer Profile', ()=>{
     //     console.log(response.data);
     // });
 
-    test('Delete Gamer Profile', async()=>{
+    test.skip('Delete Gamer Profile', async()=>{
         const response = await axios.delete('https://dev-api.yarsaplay.com/api/v1/profile', {
             headers: {
                 Authorization: `Bearer ${token}`

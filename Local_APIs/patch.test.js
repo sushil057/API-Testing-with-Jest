@@ -6,7 +6,7 @@ describe('PATCH /gamers/:id', () => {
 
     beforeAll(async () => {
         const payload = { gamesWon: 130 }; // only updating one field
-        response = await axios.patch(`${url}/2`, payload);
+        response = await axios.patch(`${url}/3`, payload);
     });
 
     test('PATCH request successfully updates the field', () => {

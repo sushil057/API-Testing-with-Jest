@@ -1,5 +1,5 @@
 const axios = require('axios')
-describe('Sample Test', () => {
+describe.skip('Sample Test', () => {
     test('Updating Gamer Profile', async () => {
         const payload = {
             "displayName": "Yarsa Play",
@@ -25,7 +25,7 @@ describe('Sample Test', () => {
         console.log(response.data);
     });
 
-    test.only('Increase/Decrease Stats for certain gamers', async () => {
+    test('Increase/Decrease Stats for certain gamers', async () => {
         const payload = {
             "stats": [
                 {

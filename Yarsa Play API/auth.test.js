@@ -1,7 +1,7 @@
 const axios = require('axios');
 require('dotenv').config();
 
-describe('Gamer Login', ()=>{
+describe('Gamer Login', () => {
     let response;
     let response1;
     let responseTime;
@@ -9,18 +9,18 @@ describe('Gamer Login', ()=>{
     let accessToken;
     let refreshToken;
 
-    test('The gamer login has been successful', async()=>{
+    test('The gamer login has been successful', async () => {
         const payload = {
             'token': 'hello world'
         }
         const startTime = Date.now();
         response = await axios.post('https://dev-api.yarsaplay.com/api/v1/auth/login', payload, {
-            headers:{
+            headers: {
                 // 'applicationid': 'bf844582-50c1-438c-95f8-d1d0b919778e',
                 'applicationid': process.env.application_id,
                 'Content-Type': 'application/json'
             },
-            params:{
+            params: {
                 // 'provider': 'Device'
                 'provider': process.env.provider
             }
@@ -48,10 +48,9 @@ describe('Gamer Login', ()=>{
         console.log('Response Time', responseTime, 'ms');
     });
 
-    test('Access Token created successfully', async()=>{
+    test('Access Token created successfully', async () => {
         payload = {
-            refreshToken : process.env.refresh_token2
-
+            refreshToken: refreshToken
         }
         const startTime = Date.now();
         response1 = await axios.post('https://dev-api.yarsaplay.com/api/v1/auth/access-token', payload);
@@ -60,6 +59,18 @@ describe('Gamer Login', ()=>{
         expect(response1.status).toBe(201);
         expect(response1.data.accessToken).toBeTruthy();
         console.log('Access Token:', response1.data.accessToken);
+        accessToken = response1.data.accessToken
     });
 
+    test('Delete Gamer Profile', async () => {
+        const response = await axios.delete('https://dev-api.yarsaplay.com/api/v1/profile', {
+            headers: {
+                Authorization: `Bearer ${accessToken}`
+            }
+        });
+
+        expect(response.status).toBe(200);
+        expect(response.data.message).toBe('User deleted. This might take a while to complete')
+        console.log(response.data.message);
+    });
 });

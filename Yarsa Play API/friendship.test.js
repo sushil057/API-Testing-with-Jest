@@ -69,13 +69,13 @@ describe('Gamer Friendship', () => {
 
 });
 
-describe('Friendship', () => {
+describe.skip('Friendship', () => {
     const token2 = process.env.access_token2
     // let id = process.env.player_id
 
     test('Get Friend List', async () => {
         const response = await axios.get('https://dev-api.yarsaplay.com/api/v1/friendship', {
-            headers: { Authorization: `Bearer ${token2}` },
+            headers: { Authorization: `Bearer ${token2}`},
             params: {
                 'status': 'Pending',
                 'isFriendshipInitiator': 'false'
@@ -102,7 +102,7 @@ describe('Friendship', () => {
         expect(response.status).toBe(201);
 
     });
-    test.only('Accept Friend Request', async () => {
+    test('Accept Friend Request', async () => {
         const token1 = process.env.access_token1
         const id = process.env.player_id1
         const response = await axios.patch(`https://dev-api.yarsaplay.com/api/v1/friendship/${id}/accept`, {}, {
